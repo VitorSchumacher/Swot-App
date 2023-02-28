@@ -100,3 +100,23 @@ export const DivList = styled.div`
     }
   }
 `;
+export const DivButtonCadastrar = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 0.5rem;
+  p {
+    background-color: #0b8770;
+    padding: 0.5rem 0.75rem;
+    color: #fff;
+    font-size: 1.25rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 15px;
+    font-family: "Heebo", sans-serif;
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+`;

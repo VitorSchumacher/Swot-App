@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback, useState } from "react";
 
 import {
   MainHeader,
@@ -8,18 +8,31 @@ import {
   TextSub,
   DivList,
   DivSubInput,
+  DivButtonCadastrar,
 } from "./styles";
 import { AiOutlineCloseCircle } from "react-icons/ai";
+import { useDispatch, useSelector } from "react-redux";
+import { addAreas, useAreas } from "../../Store/sliceAreas";
+// import { useAreas } from "../../Context/Areas/ContexAreas";
+
+interface IArea {
+  id: number;
+  name: string;
+}
 
 function AreasEmpresa() {
-  const areasCadastradas = [
-    "Area 1",
-    "Area 2",
-    "Area 3",
-    "Area 4",
-    "Area 5",
-    "Area 6",
-  ];
+  // const { areas, addItens, removeItem } = useAreas();
+  const [newArea, setNewArea] = useState<IArea>({ id: 0, name: "" });
+  const dispatch = useDispatch();
+  const areas = useSelector(useAreas);
+
+  const add = () => {
+    console.log(areas);
+    dispatch(addAreas(newArea));
+    // addItens(newArea);
+    setNewArea({ id: 0, name: "" });
+  };
+
   return (
     <Main>
       <header>
@@ -31,15 +44,28 @@ function AreasEmpresa() {
         <InputDiv>
           <label>
             Adicionar área
-            <input type="text" />
+            <input
+              type="text"
+              value={newArea?.name}
+              onChange={(event) =>
+                setNewArea({ id: 0, name: event.target.value })
+              }
+            />
           </label>
+          {newArea.name !== "" ? (
+            <DivButtonCadastrar onClick={() => add()}>
+              <p>Cadastrar</p>
+            </DivButtonCadastrar>
+          ) : (
+            <div />
+          )}
         </InputDiv>
         <DivSubInput>
           <TextSub>Áreas cadastradas</TextSub>
           <DivList>
-            {areasCadastradas.map((cadastradas) => (
+            {areas?.map((item) => (
               <div>
-                <p>{cadastradas}</p>
+                <p>{item.name}</p>
                 <div>
                   <AiOutlineCloseCircle size={"1rem"} color="#f00" />
                 </div>
