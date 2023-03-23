@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import React, { useState } from "react";
 
 import {
   MainHeader,
@@ -12,7 +12,7 @@ import {
 } from "./styles";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
-import { addAreas, useAreas } from "../../Store/sliceAreas";
+import { addAreas, removeAreas, useAreas } from "../../Store/sliceAreas";
 // import { useAreas } from "../../Context/Areas/ContexAreas";
 
 interface IArea {
@@ -33,6 +33,10 @@ function AreasEmpresa() {
     setNewArea({ id: 0, name: "" });
   };
 
+  const remove = (id: number) => {
+    dispatch(removeAreas(id));
+  };
+
   return (
     <Main>
       <header>
@@ -48,7 +52,7 @@ function AreasEmpresa() {
               type="text"
               value={newArea?.name}
               onChange={(event) =>
-                setNewArea({ id: 0, name: event.target.value })
+                setNewArea({ id: areas.length + 1, name: event.target.value })
               }
             />
           </label>
@@ -67,7 +71,11 @@ function AreasEmpresa() {
               <div>
                 <p>{item.name}</p>
                 <div>
-                  <AiOutlineCloseCircle size={"1rem"} color="#f00" />
+                  <AiOutlineCloseCircle
+                    size={"1rem"}
+                    color="#f00"
+                    onClick={() => remove(item.id)}
+                  />
                 </div>
               </div>
             ))}
