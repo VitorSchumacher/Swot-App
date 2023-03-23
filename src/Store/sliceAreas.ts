@@ -12,13 +12,16 @@ const sliceAreas = createSlice({
   initialState: INITIAL_STATE,
   reducers: {
     addAreas(state, action) {
-        console.log(action)
       return [...state, { id: action.payload.id, name: action.payload.name }];
+    },
+    removeAreas(state, action) {
+      let newItens = state.filter((state) => state.id !== action.payload);
+      return newItens;
     },
   },
 });
 export default sliceAreas.reducer;
-export const { addAreas } = sliceAreas.actions;
+export const { addAreas, removeAreas } = sliceAreas.actions;
 export const useAreas = (state: any) => {
   return state.areas as IAreas[];
 };
