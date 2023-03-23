@@ -26,7 +26,10 @@ const Navigator: FC<IProps> = ({ children }) => {
             <a href="/areas-empresa">Áreas da empresa</a>
             <a href="/responsaveis">Responsáveis</a>
             <a href="/forcas">Forças</a>
-
+            <a href="/fraquezas">Fraquezas</a>
+            <a href="/oportunidades">Oportunidades</a>
+            <a href="/ameacas">Ameaças</a>
+            <a href="/matriz-swot">Matriz SWOT</a>
           </ToolBar>
         ) : (
           <div />

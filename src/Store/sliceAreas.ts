@@ -5,7 +5,7 @@ interface IAreas {
   name: string;
 }
 
-const INITIAL_STATE: IAreas[] = [{ id: 0, name: "" }];
+const INITIAL_STATE: IAreas[] = [];
 
 const sliceAreas = createSlice({
   name: "areas",
