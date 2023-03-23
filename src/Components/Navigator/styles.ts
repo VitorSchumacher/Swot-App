@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const DivMainNavigate = styled.div`
-  background-color: #0b8770;
+  background-color: #191970;
   width: 100%;
   display: flex;
   padding: 1rem 0;
@@ -25,7 +25,7 @@ export const DivMainNavigate = styled.div`
 export const MainToolBar = styled.div`
   display: flex;
   flex-direction: row;
-  background-color: #0b8770aa;
+  background-color: #191970cc;
 `;
 export const ToolBar = styled.div`
   display: flex;
@@ -34,11 +34,25 @@ export const ToolBar = styled.div`
   height: 100%;
   width: 25vw;
   min-height: 95vh;
-  a {
-    text-decoration: none;
-    color: #fff;
-    font-family: "Heebo", sans-serif;
-    font-size: 1.12rem;
+  div {
     margin: 1rem auto 0;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    div {
+      margin: 0;
+      background-color: #b8860b;
+      height: 5px;
+      width: 5px;
+      border-radius: 60px;
+      margin-right: 5px;
+    }
+    a {
+      text-decoration: none;
+      color: #fff;
+      font-family: "Heebo", sans-serif;
+      font-size: 1.12rem;
+    }
   }
 `;

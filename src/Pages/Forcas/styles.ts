@@ -14,7 +14,7 @@ export const MainHeader = styled.div`
   h1 {
     font-family: "Heebo", sans-serif;
     font-size: 2rem;
-    color: #0b8770;
+    color: #191970;
     font-weight: bold;
   }
 `;

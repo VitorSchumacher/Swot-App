@@ -2,6 +2,7 @@ import React, { FC, useState } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
 
 import { DivMainNavigate, MainToolBar, ToolBar } from "./styles";
+import Logo from "../../assets/image/logoRec.png";
 
 interface IProps {
   children: React.ReactNode;
@@ -14,22 +15,46 @@ const Navigator: FC<IProps> = ({ children }) => {
     <div style={{ flexGrow: 1 }}>
       <DivMainNavigate>
         <div onClick={() => setOpen(!open)}>
-          <AiOutlineMenu color="#fff" size={"2rem"} />
+          <AiOutlineMenu color="#B8860B" size={"2rem"} />
         </div>
-        <p>Swot</p>
+        <img src={Logo} alt="test" style={{ width: "5rem", marginLeft: "1rem" }} />
       </DivMainNavigate>
       <MainToolBar>
         {open === true ? (
           <ToolBar>
-            <a href="/">Inicio</a>
-            {/* <a href={`/${teste}`}>Áreas da empresa</a> */}
-            <a href="/areas-empresa">Áreas da empresa</a>
-            <a href="/responsaveis">Responsáveis</a>
-            <a href="/forcas">Forças</a>
-            <a href="/fraquezas">Fraquezas</a>
-            <a href="/oportunidades">Oportunidades</a>
-            <a href="/ameacas">Ameaças</a>
-            <a href="/matriz-swot">Matriz SWOT</a>
+            <div>
+              <div />
+              <a href="/">Inicio</a>
+            </div>
+            <div>
+              <div />
+              <a href="/areas-empresa">Áreas da empresa</a>
+            </div>
+            <div>
+              <div />
+              <a href="/responsaveis">Responsáveis</a>
+            </div>
+            <div>
+              <div />
+
+              <a href="/forcas">Forças</a>
+            </div>
+            <div>
+              <div />
+              <a href="/fraquezas">Fraquezas</a>
+            </div>
+            <div>
+              <div />
+              <a href="/oportunidades">Oportunidades</a>
+            </div>
+            <div>
+              <div />
+              <a href="/ameacas">Ameaças</a>
+            </div>
+            <div>
+              <div />
+              <a href="/matriz-swot">Matriz SWOT</a>
+            </div>
           </ToolBar>
         ) : (
           <div />

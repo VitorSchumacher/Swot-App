@@ -15,7 +15,7 @@ export const MainHeader = styled.div`
   h1 {
     font-family: "Heebo", sans-serif;
     font-size: 2rem;
-    color: #0b8770;
+    color: #191970;
     font-weight: bold;
   }
 `;
@@ -107,7 +107,7 @@ export const DivButtonCadastrar = styled.div`
   width: 100%;
   margin-top: 0.5rem;
   p {
-    background-color: #0b8770;
+    background-color: #191970cc;
     padding: 0.5rem 0.75rem;
     color: #fff;
     font-size: 1.25rem;
