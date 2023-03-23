@@ -12,7 +12,7 @@ const Oportunidades = () => {
           <h1>Oportunidades</h1>
         </MainHeader>
       </header>
-      <MainTable>
+      <MainTable color="#191970">
         <div>
           <p>Item</p>
         </div>

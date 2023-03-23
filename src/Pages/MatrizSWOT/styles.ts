@@ -55,7 +55,7 @@ export const TextTitle = styled.p`
   margin-bottom: 2vh;
 `;
 export const TextNumber = styled.p`
-  color: ${props => props.color};;
+  color: ${props => props.color};
   font-family: "Heebo", sans-serif;
   font-size: 1.15rem;
   margin-bottom: 2vh;

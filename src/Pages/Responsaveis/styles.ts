@@ -30,6 +30,19 @@ export const MainBody = styled.body`
 
 export const InputDiv = styled.div`
   width: 100%;
+  select {
+    outline: none;
+    border: none;
+    font-size: 0.9rem;
+    width: 70%;
+    font-family: "Heebo", sans-serif;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    padding: 0.25rem 0.75rem;
+    margin: 0.8rem 0;
+    outline: 0;
+  }
   label {
     display: flex;
     align-items: center;

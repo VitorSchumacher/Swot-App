@@ -12,7 +12,7 @@ const Ameacas = () => {
           <h1>Ameaças</h1>
         </MainHeader>
       </header>
-      <MainTable>
+      <MainTable color="#191970">
         <div>
           <p>Item</p>
         </div>
