@@ -1,6 +1,5 @@
 import React from "react";
 import { Main, MainHeader, MainTable } from "./styles";
-import { dadosForca } from "../../Dados/dadosForca";
 import ListItem from "./componets/ListItem/ListItem";
 import { useForcas } from "../../Store/sliceForcas";
 import { useSelector } from "react-redux";
