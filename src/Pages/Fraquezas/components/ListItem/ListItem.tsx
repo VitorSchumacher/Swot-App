@@ -5,7 +5,7 @@ import { importancia } from "../../../../Dados/importancia";
 import { intensidade } from "../../../../Dados/intensidade";
 import { tendencia } from "../../../../Dados/tendencia";
 import { MainTable } from "../../styles";
-import { updateFraquezas } from "../../../../Store/sliceFraquezas"; 
+import { updateFraquezas } from "../../../../Store/sliceFraquezas";
 
 interface IDados {
   title: string;
@@ -28,7 +28,7 @@ const ListItem: FC<IProps> = ({ dados }) => {
   const setAbsoluteValue = () => {
     let value = importanciaValue * intensidadeValue * tendenciaValue;
     dispatch(
-        updateFraquezas({
+      updateFraquezas({
         value: value,
         id: dados.id,
         importancia: importanciaValue,
@@ -46,39 +46,45 @@ const ListItem: FC<IProps> = ({ dados }) => {
         <div>
           <p>{dados.title}</p>
         </div>
-        <select
-          name="importancia"
-          onChange={(event) => {
-            setImportanciaValue(parseInt(event.target.value));
-          }}
-          value={dados.importancia}
-        >
-          {importancia.map((imp) => (
-            <option value={imp.multi}>{imp.title}</option>
-          ))}
-        </select>
-        <select
-          name="intensidade"
-          onChange={(event) => {
-            setIntensidadeValue(parseInt(event.target.value));
-          }}
-          value={dados.intencidade}
-        >
-          {intensidade.map((imp) => (
-            <option value={imp.multi}>{imp.title}</option>
-          ))}
-        </select>
-        <select
-          name="tendencia"
-          onChange={(event) => {
-            setTendenciaValue(parseInt(event.target.value));
-          }}
-          value={dados.tendencia}
-        >
-          {tendencia.map((imp) => (
-            <option value={imp.multi}>{imp.title}</option>
-          ))}
-        </select>
+        <div>
+          <select
+            name="importancia"
+            onChange={(event) => {
+              setImportanciaValue(parseInt(event.target.value));
+            }}
+            value={dados.importancia}
+          >
+            {importancia.map((imp) => (
+              <option value={imp.multi}>{imp.title}</option>
+            ))}
+          </select>
+        </div>
+        <div>
+          <select
+            name="intensidade"
+            onChange={(event) => {
+              setIntensidadeValue(parseInt(event.target.value));
+            }}
+            value={dados.intencidade}
+          >
+            {intensidade.map((imp) => (
+              <option value={imp.multi}>{imp.title}</option>
+            ))}
+          </select>
+        </div>
+        <div>
+          <select
+            name="tendencia"
+            onChange={(event) => {
+              setTendenciaValue(parseInt(event.target.value));
+            }}
+            value={dados.tendencia}
+          >
+            {tendencia.map((imp) => (
+              <option value={imp.multi}>{imp.title}</option>
+            ))}
+          </select>
+        </div>
         <div>
           <p>{dados.value}</p>
         </div>

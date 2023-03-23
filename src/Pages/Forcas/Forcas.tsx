@@ -13,7 +13,7 @@ const Forcas = () => {
           <h1>Forças</h1>
         </MainHeader>
       </header>
-      <MainTable>
+      <MainTable color="#191970">
         <div>
           <p>Item</p>
         </div>
