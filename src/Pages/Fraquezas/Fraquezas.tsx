@@ -1,16 +1,16 @@
 import React from "react";
 import { Main, MainHeader, MainTable } from "./styles";
-import ListItem from "./componets/ListItem/ListItem";
-import { useForcas } from "../../Store/sliceForcas";
 import { useSelector } from "react-redux";
+import { useFraquezas } from "../../Store/sliceFraquezas";
+import ListItem from "./components/ListItem/ListItem";
 
-const Forcas = () => {
-  const forcas = useSelector(useForcas);
+const Fraquezas = () => {
+  const fraquezas = useSelector(useFraquezas);
   return (
     <Main>
       <header>
         <MainHeader>
-          <h1>Forças</h1>
+          <h1>Fraquezas</h1>
         </MainHeader>
       </header>
       <MainTable>
@@ -30,10 +30,10 @@ const Forcas = () => {
           <p>Pontuação</p>
         </div>
       </MainTable>
-      {forcas.map((dados) => (
+      {fraquezas.map((dados) => (
         <ListItem dados={dados} />
       ))}
     </Main>
   );
 };
-export default Forcas;
+export default Fraquezas;

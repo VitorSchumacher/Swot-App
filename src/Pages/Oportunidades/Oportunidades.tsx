@@ -1,16 +1,15 @@
 import React from "react";
 import { Main, MainHeader, MainTable } from "./styles";
-import ListItem from "./componets/ListItem/ListItem";
-import { useForcas } from "../../Store/sliceForcas";
+import { useOportunidades } from "../../Store/sliceOportunidades";
 import { useSelector } from "react-redux";
-
-const Forcas = () => {
-  const forcas = useSelector(useForcas);
+import ListItem from "./components/ListItem/ListItem";
+const Oportunidades = () => {
+  const oportunidades = useSelector(useOportunidades);
   return (
     <Main>
       <header>
         <MainHeader>
-          <h1>Forças</h1>
+          <h1>Oportunidades</h1>
         </MainHeader>
       </header>
       <MainTable>
@@ -21,7 +20,7 @@ const Forcas = () => {
           <p>Importância</p>
         </div>
         <div>
-          <p>Intensidade</p>
+          <p>Urgência</p>
         </div>
         <div>
           <p>Tendência</p>
@@ -30,10 +29,10 @@ const Forcas = () => {
           <p>Pontuação</p>
         </div>
       </MainTable>
-      {forcas.map((dados) => (
+      {oportunidades.map((dados) => (
         <ListItem dados={dados} />
       ))}
     </Main>
   );
 };
-export default Forcas;
+export default Oportunidades;
